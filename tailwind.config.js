@@ -15,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
+        'playfair': ['Playfair Display', 'serif'],
       },
       spacing: {
         '18': '4.5rem',

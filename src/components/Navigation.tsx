@@ -6,6 +6,7 @@ import Link from 'next/link'
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [cartCount, setCartCount] = useState(0) // This will be connected to cart state later
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,14 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -72,36 +81,63 @@ const Navigation = () => {
             </button>
 
             {/* Mobile Menu Button - Only shown on mobile */}
-            <button className="md:hidden ml-4 p-2 text-primary hover:text-gray-600 transition-colors duration-300">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+            <button 
+              onClick={toggleMobileMenu}
+              className="md:hidden ml-4 p-2 text-primary hover:text-gray-600 transition-colors duration-300"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu - Will be enhanced later */}
-        <div className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
-          <div className="flex flex-col space-y-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="font-inter text-sm font-medium text-primary hover:text-gray-600 transition-colors duration-300 py-2"
-              >
-                {item.name}
-              </Link>
-            ))}
+        {/* Mobile Navigation Menu - Hidden by default, opens on toggle */}
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="mt-4 pb-4 border-t border-gray-100 pt-4">
+            <div className="flex flex-col space-y-3">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="font-inter text-sm font-medium text-primary hover:text-gray-600 transition-colors duration-300 py-2"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
