@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useCart } from '@/contexts/CartContext'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [cartCount, setCartCount] = useState(0) // This will be connected to cart state later
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { getCartCount } = useCart()
+  const cartCount = getCartCount()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,28 +59,30 @@ const Navigation = () => {
 
           {/* Cart Icon */}
           <div className="flex items-center">
-            <button className="relative p-2 text-primary hover:text-gray-600 transition-colors duration-300">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m.6 8L6 18h12M9 22a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
-                />
-              </svg>
-              
-              {/* Cart Count Badge */}
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs font-medium rounded-full w-5 h-5 flex items-center justify-center">
-                  {cartCount}
-                </span>
-              )}
-            </button>
+            <Link href="/cart">
+              <button className="relative p-2 text-primary hover:text-gray-600 transition-colors duration-300">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4m.6 8L6 18h12M9 22a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
+                  />
+                </svg>
+                
+                {/* Cart Count Badge */}
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-white text-xs font-medium rounded-full w-5 h-5 flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </button>
+            </Link>
 
             {/* Mobile Menu Button - Only shown on mobile */}
             <button 

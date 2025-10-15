@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -10,7 +11,7 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section className="relative h-[85vh] md:h-[90vh] flex items-center justify-center px-6 overflow-hidden">
       {/* Background Image - No overlay */}
       <div className="absolute inset-0">
         <img
@@ -39,9 +40,11 @@ const HeroSection = () => {
           <div className={`transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <button className="bg-white text-primary px-8 py-3 font-inter font-medium tracking-wide transition-all duration-300 hover:bg-gray-100 rounded-lg">
-              Shop Now
-            </button>
+            <Link href="/shop">
+              <button className="bg-white text-primary px-8 py-3 font-inter font-medium tracking-wide transition-all duration-300 hover:bg-gray-100 rounded-lg">
+                Shop Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

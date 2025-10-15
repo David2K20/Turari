@@ -78,6 +78,143 @@ export const featuredProducts: Product[] = [
     inStock: true,
     featured: true
   }
+,
+  {
+    id: '5',
+    name: 'Azure Dreams',
+    description: 'Fresh aquatic notes blended with coastal herbs, evoking endless summer days by the sea.',
+    price: 95000,
+    image: '/images/perfume_7.webp',
+    images: ['/images/perfume_7.webp'],
+    category: 'Aquatic',
+    scent_notes: {
+      top: ['Sea Salt', 'Bergamot', 'Mint'],
+      middle: ['Marine Notes', 'Sage', 'Lavender'],
+      base: ['Driftwood', 'Amber', 'Musk']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '6',
+    name: 'Crimson Silk',
+    description: 'Opulent rose absolute paired with velvety vanilla, a timeless expression of romance.',
+    price: 110000,
+    image: '/images/perfume_8.webp',
+    images: ['/images/perfume_8.webp'],
+    category: 'Floral',
+    scent_notes: {
+      top: ['Turkish Rose', 'Pink Pepper'],
+      middle: ['Damask Rose', 'Iris', 'Violet'],
+      base: ['Vanilla', 'Patchouli', 'Sandalwood']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '7',
+    name: 'Golden Hour',
+    description: 'Warm amber and honey intertwine with spices, capturing the magic of twilight.',
+    price: 125000,
+    image: '/images/perfume_9.webp',
+    images: ['/images/perfume_9.webp'],
+    category: 'Oriental',
+    scent_notes: {
+      top: ['Mandarin', 'Cardamom'],
+      middle: ['Honey', 'Jasmine', 'Cinnamon'],
+      base: ['Amber', 'Tonka Bean', 'Vanilla']
+    },
+    size: '30ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '8',
+    name: 'Midnight Bloom',
+    description: 'Intoxicating night-blooming jasmine with mysterious dark woods and musk.',
+    price: 135000,
+    image: '/images/perfume_10.webp',
+    images: ['/images/perfume_10.webp'],
+    category: 'Floral',
+    scent_notes: {
+      top: ['Night Jasmine', 'Tuberose'],
+      middle: ['Gardenia', 'Orange Blossom'],
+      base: ['Black Musk', 'Ebony Wood', 'Vanilla']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '9',
+    name: 'Forest Path',
+    description: 'Crisp pine and cedar with earthy moss, a journey through untouched wilderness.',
+    price: 98000,
+    image: '/images/perfume_11.webp',
+    images: ['/images/perfume_11.webp'],
+    category: 'Woody',
+    scent_notes: {
+      top: ['Pine Needle', 'Juniper', 'Bergamot'],
+      middle: ['Cedar', 'Cypress', 'Oakmoss'],
+      base: ['Vetiver', 'Patchouli', 'Musk']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '10',
+    name: 'Pearl Essence',
+    description: 'Delicate white flowers and soft musk create an ethereal, luminous aura.',
+    price: 105000,
+    image: '/images/perfume_12.webp',
+    images: ['/images/perfume_12.webp'],
+    category: 'Floral',
+    scent_notes: {
+      top: ['White Peony', 'Freesia'],
+      middle: ['Magnolia', 'Lily of the Valley'],
+      base: ['White Musk', 'Cashmere Wood']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '11',
+    name: 'Ember Nights',
+    description: 'Smoky leather and spiced rum with dark chocolate undertones for bold sophistication.',
+    price: 165000,
+    image: '/images/perfume_13.webp',
+    images: ['/images/perfume_13.webp'],
+    category: 'Oriental',
+    scent_notes: {
+      top: ['Rum', 'Cinnamon', 'Nutmeg'],
+      middle: ['Tobacco', 'Leather', 'Clove'],
+      base: ['Dark Chocolate', 'Vetiver', 'Benzoin']
+    },
+    size: '30ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '12',
+    name: 'Ivory Breeze',
+    description: 'Light and airy with jasmine tea and bamboo, perfect for everyday elegance.',
+    price: 78000,
+    image: '/images/perfume_14.webp',
+    images: ['/images/perfume_14.webp'],
+    category: 'Fresh',
+    scent_notes: {
+      top: ['Green Tea', 'Bamboo', 'Citrus'],
+      middle: ['Jasmine', 'White Rose', 'Lily'],
+      base: ['Soft Musk', 'Cedar', 'Amber']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  }
 ]
 
 // Fragrance Categories Data

@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { featuredProducts, formatPrice } from '@/lib/data'
 import { Product } from '@/types'
+import { useCart } from '@/contexts/CartContext'
 
 interface ProductCardProps {
   product: Product
@@ -31,18 +33,6 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           }`}
           onLoad={() => setImageLoading(false)}
         />
-        
-        {/* Add to Cart Button - Appears on hover */}
-        <button
-          onClick={() => onAddToCart(product)}
-          className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-primary hover:bg-gray-800 text-white font-inter font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-            isHovered 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-4'
-          }`}
-        >
-          Add to Cart
-        </button>
 
         {/* Stock Status */}
         {!product.inStock && (
@@ -70,10 +60,11 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
             {formatPrice(product.price)}
           </span>
           
-          {/* Quick Add Button (Always visible on mobile) */}
+          {/* Quick Add Button (Always visible) */}
           <button
             onClick={() => onAddToCart(product)}
-            className="md:hidden bg-primary text-white p-2 rounded-full hover:bg-gray-800 transition-all duration-300"
+            className="bg-primary text-white p-2 rounded-full hover:bg-gray-800 transition-all duration-300"
+            aria-label="Add to cart"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -86,12 +77,10 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
 }
 
 const FeaturedProducts = () => {
+  const { addToCart } = useCart()
+  
   const handleAddToCart = (product: Product) => {
-    // This will be connected to cart state management later
-    console.log('Adding to cart:', product.name)
-    
-    // Show a brief success animation (you could enhance this with a toast)
-    alert(`${product.name} added to cart!`)
+    addToCart(product)
   }
 
   return (
@@ -108,7 +97,7 @@ const FeaturedProducts = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {featuredProducts.map((product) => (
             <ProductCard
               key={product.id}
@@ -120,9 +109,11 @@ const FeaturedProducts = () => {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <button className="btn-secondary">
-            Shop Now
-          </button>
+          <Link href="/shop">
+            <button className="btn-secondary">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
     </section>

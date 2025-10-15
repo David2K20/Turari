@@ -17,8 +17,6 @@ export default function Home() {
         {/* Featured Products Section */}
         <FeaturedProducts />
         
-        {/* Fragrance Collections Preview */}
-        <FragranceCollections />
         
         {/* FAQ Section */}
         <FAQSection />
