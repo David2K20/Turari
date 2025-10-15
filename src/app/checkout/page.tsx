@@ -23,9 +23,6 @@ const CheckoutPage = () => {
     postalCode: '',
     country: '',
     phone: '',
-    cardNumber: '',
-    cardExpiry: '',
-    cardCvc: '',
   })
 
   const cartTotal = getCartTotal()
@@ -62,8 +59,8 @@ const CheckoutPage = () => {
       <section className="py-12 md:py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Page Header */}
-          <div className="mb-8 md:mb-12">
-            <h1 className="font-playfair text-3xl md:text-4xl font-bold text-primary mb-2">
+          <div className="mb-8 md:mb-12 pt-20 md:pt-0">
+            <h1 className="font-playfair text-2xl md:text-4xl font-bold text-primary mb-2">
               Checkout
             </h1>
             <p className="font-inter text-sm md:text-base text-secondary">
@@ -224,77 +221,6 @@ const CheckoutPage = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Payment Information */}
-                <div className="bg-white rounded-lg shadow-subtle p-6">
-                  <h2 className="font-playfair text-xl font-semibold text-primary mb-4">
-                    Payment Information
-                  </h2>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="cardNumber" className="block font-inter text-sm font-medium text-primary mb-2">
-                        Card Number *
-                      </label>
-                      <input
-                        type="text"
-                        id="cardNumber"
-                        name="cardNumber"
-                        value={formData.cardNumber}
-                        onChange={handleInputChange}
-                        required
-                        maxLength={19}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                        placeholder="1234 5678 9012 3456"
-                      />
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="cardExpiry" className="block font-inter text-sm font-medium text-primary mb-2">
-                          Expiry Date *
-                        </label>
-                        <input
-                          type="text"
-                          id="cardExpiry"
-                          name="cardExpiry"
-                          value={formData.cardExpiry}
-                          onChange={handleInputChange}
-                          required
-                          maxLength={5}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                          placeholder="MM/YY"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="cardCvc" className="block font-inter text-sm font-medium text-primary mb-2">
-                          CVC *
-                        </label>
-                        <input
-                          type="text"
-                          id="cardCvc"
-                          name="cardCvc"
-                          value={formData.cardCvc}
-                          onChange={handleInputChange}
-                          required
-                          maxLength={4}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                          placeholder="123"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 pt-4">
-                      <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                      </svg>
-                      <p className="font-inter text-xs text-secondary">
-                        Your payment information is secure and encrypted
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Order Summary */}
@@ -368,7 +294,7 @@ const CheckoutPage = () => {
                         Processing...
                       </span>
                     ) : (
-                      `Pay ${formatPrice(total)}`
+                      'Proceed to Payment'
                     )}
                   </button>
 

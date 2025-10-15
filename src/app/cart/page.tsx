@@ -67,8 +67,8 @@ const CartPage = () => {
       <section className="py-12 md:py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Page Header */}
-          <div className="mb-8 md:mb-12">
-            <h1 className="font-playfair text-3xl md:text-4xl font-bold text-primary mb-2">
+          <div className="mb-8 md:mb-12 pt-20 md:pt-0">
+            <h1 className="font-playfair text-2xl md:text-4xl font-bold text-primary mb-2">
               Shopping Cart
             </h1>
             <p className="font-inter text-sm md:text-base text-secondary">
