@@ -68,6 +68,21 @@ a {
   .shadow-subtle {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Component styles */

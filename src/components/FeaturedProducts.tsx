@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { featuredProducts, formatPrice } from '@/lib/data'
 import { Product } from '@/types'
 import { useCart } from '@/contexts/CartContext'
+import Toast from './Toast'
 
 interface ProductCardProps {
   product: Product
@@ -78,13 +79,27 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
 
 const FeaturedProducts = () => {
   const { addToCart } = useCart()
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
   
   const handleAddToCart = (product: Product) => {
     addToCart(product)
+    setToastMessage(product.name)
+    setShowToast(true)
   }
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <>
+      {showToast && toastMessage && (
+        <Toast
+          message={toastMessage}
+          productImage={featuredProducts.find(p => p.name === toastMessage)?.image}
+          productName={toastMessage}
+          onClose={() => setShowToast(false)}
+        />
+      )}
+      
+      <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -117,6 +132,7 @@ const FeaturedProducts = () => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 

@@ -7,10 +7,13 @@ import { Product } from '@/types'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { useCart } from '@/contexts/CartContext'
+import Toast from '@/components/Toast'
 
 const ShopPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
   const [sortBy, setSortBy] = useState<string>('featured')
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
   const { addToCart } = useCart()
 
   const allProducts = featuredProducts
@@ -39,10 +42,21 @@ const ShopPage = () => {
 
   const handleAddToCart = (product: Product) => {
     addToCart(product)
+    setToastMessage(product.name)
+    setShowToast(true)
   }
 
   return (
     <div className="min-h-screen bg-background">
+      {showToast && toastMessage && (
+        <Toast
+          message={toastMessage}
+          productImage={featuredProducts.find(p => p.name === toastMessage)?.image}
+          productName={toastMessage}
+          onClose={() => setShowToast(false)}
+        />
+      )}
+      
       <Navigation />
       
       <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-white to-background">
