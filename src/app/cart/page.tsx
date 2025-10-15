@@ -10,15 +10,16 @@ import Footer from '@/components/Footer'
 const CartPage = () => {
   const { items, updateQuantity, removeFromCart, getCartTotal } = useCart()
 
-  const shippingCost = items.length > 0 ? 10 : 0
-  const total = getCartTotal() + shippingCost
+  const cartTotal = getCartTotal()
+  const shippingCost = cartTotal >= 200000 ? 0 : 10000
+  const total = cartTotal + shippingCost
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
         
-        <section className="py-20 px-6">
+        <section className="flex-1 py-20 px-6">
           <div className="max-w-4xl mx-auto text-center">
             {/* Empty Cart Icon */}
             <div className="mb-8">
@@ -186,7 +187,9 @@ const CartPage = () => {
                   
                   <div className="flex justify-between font-inter text-sm">
                     <span className="text-secondary">Shipping</span>
-                    <span className="text-primary font-medium">{formatPrice(shippingCost)}</span>
+                    <span className="text-primary font-medium">
+                      {shippingCost === 0 ? 'FREE' : formatPrice(shippingCost)}
+                    </span>
                   </div>
 
                   <div className="border-t border-gray-200 pt-3 mt-3">
@@ -223,7 +226,7 @@ const CartPage = () => {
                       <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                       </svg>
-                      <span className="font-inter text-sm">Free shipping over $100</span>
+                      <span className="font-inter text-sm">Free shipping over ₦200,000</span>
                     </div>
                     
                     <div className="flex items-center gap-3 text-secondary">

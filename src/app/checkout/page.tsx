@@ -28,8 +28,9 @@ const CheckoutPage = () => {
     cardCvc: '',
   })
 
-  const shippingCost = items.length > 0 ? 10 : 0
-  const total = getCartTotal() + shippingCost
+  const cartTotal = getCartTotal()
+  const shippingCost = cartTotal >= 200000 ? 0 : 10000
+  const total = cartTotal + shippingCost
 
   // Redirect if cart is empty
   if (items.length === 0) {
@@ -93,7 +94,7 @@ const CheckoutPage = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                        placeholder="you@example.com"
+                        placeholder="oreoluwadavid08@gmail.com"
                       />
                     </div>
                     
@@ -110,7 +111,7 @@ const CheckoutPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                          placeholder="John"
+                          placeholder="Oreoluwa"
                         />
                       </div>
                       
@@ -126,7 +127,7 @@ const CheckoutPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                          placeholder="Doe"
+                          placeholder="David"
                         />
                       </div>
                     </div>
@@ -143,7 +144,7 @@ const CheckoutPage = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+234 700 000 0000"
                       />
                     </div>
                   </div>
@@ -168,7 +169,7 @@ const CheckoutPage = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                        placeholder="123 Main Street"
+                        placeholder="123 Ogunmeps Street"
                       />
                     </div>
                     
@@ -185,7 +186,7 @@ const CheckoutPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                          placeholder="New York"
+                          placeholder="Lagos"
                         />
                       </div>
                       
@@ -201,7 +202,7 @@ const CheckoutPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                          placeholder="10001"
+                          placeholder="100001"
                         />
                       </div>
                     </div>
@@ -218,7 +219,7 @@ const CheckoutPage = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-inter text-sm"
-                        placeholder="United States"
+                        placeholder="Nigeria"
                       />
                     </div>
                   </div>
@@ -339,7 +340,9 @@ const CheckoutPage = () => {
                     
                     <div className="flex justify-between font-inter text-sm">
                       <span className="text-secondary">Shipping</span>
-                      <span className="text-primary font-medium">{formatPrice(shippingCost)}</span>
+                      <span className="text-primary font-medium">
+                        {shippingCost === 0 ? 'FREE' : formatPrice(shippingCost)}
+                      </span>
                     </div>
 
                     <div className="border-t border-gray-200 pt-3">
