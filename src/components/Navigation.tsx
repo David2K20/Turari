@@ -27,10 +27,17 @@ const Navigation = () => {
     setIsMobileMenuOpen(false)
   }
 
+  const scrollToFooter = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    })
+    closeMobileMenu()
+  }
+
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Shop', href: '/shop' },
-    { name: 'Contact', href: '/contact' },
   ]
 
   return (
@@ -55,6 +62,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <button
+              onClick={scrollToFooter}
+              className="font-inter text-sm font-medium text-primary hover:text-gray-600 transition-colors duration-300"
+            >
+              Contact
+            </button>
           </div>
 
           {/* Cart Icon */}
@@ -141,6 +154,12 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+              <button
+                onClick={scrollToFooter}
+                className="font-inter text-sm font-medium text-primary hover:text-gray-600 transition-colors duration-300 py-2 text-left"
+              >
+                Contact
+              </button>
             </div>
           </div>
         </div>
