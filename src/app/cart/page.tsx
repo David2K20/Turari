@@ -3,7 +3,7 @@
 import { useCart } from '@/contexts/CartContext'
 import { formatPrice } from '@/lib/data'
 import Image from 'next/image'
-import Link from 'next/link'
+import TransitionLink from '@/components/TransitionLink'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -47,11 +47,11 @@ const CartPage = () => {
             </p>
 
             {/* Continue Shopping Button */}
-            <Link href="/shop">
+            <TransitionLink href="/shop">
               <button className="bg-primary text-white px-8 py-3 font-inter font-medium rounded-lg hover:bg-gray-800 transition-all duration-300">
                 Continue Shopping
               </button>
-            </Link>
+            </TransitionLink>
           </div>
         </section>
 
@@ -90,6 +90,7 @@ const CartPage = () => {
                       src={item.image}
                       alt={item.name}
                       fill
+                      sizes="96px"
                       className="object-cover"
                     />
                   </div>
@@ -200,17 +201,17 @@ const CartPage = () => {
                   </div>
                 </div>
 
-                <Link href="/checkout">
+                <TransitionLink href="/checkout">
                   <button className="w-full bg-primary text-white py-3 rounded-lg font-inter font-medium hover:bg-gray-800 transition-all duration-300 mb-3">
                     Proceed to Checkout
                   </button>
-                </Link>
+                </TransitionLink>
 
-                <Link href="/shop">
+                <TransitionLink href="/shop">
                   <button className="w-full border border-primary text-primary py-3 rounded-lg font-inter font-medium hover:bg-gray-50 transition-all duration-300">
                     Continue Shopping
                   </button>
-                </Link>
+                </TransitionLink>
 
                 {/* Trust Badges */}
                 <div className="mt-6 pt-6 border-t border-gray-200">

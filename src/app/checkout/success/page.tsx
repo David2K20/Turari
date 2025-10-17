@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import TransitionLink from '@/components/TransitionLink'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -40,9 +40,9 @@ const CheckoutSuccessPage = () => {
 
           {/* Order Details */}
           <div className="bg-white rounded-lg shadow-subtle p-6 mb-8 text-left">
-            <h2 className="font-playfair text-xl font-semibold text-primary mb-4">
-              What's Next?
-            </h2>
+          <h2 className="font-playfair text-xl font-semibold text-primary mb-4">
+            What&apos;s Next?
+          </h2>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,17 +78,17 @@ const CheckoutSuccessPage = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/shop">
+            <TransitionLink href="/shop">
               <button className="bg-primary text-white px-8 py-3 font-inter font-medium rounded-lg hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto">
                 Continue Shopping
               </button>
-            </Link>
+            </TransitionLink>
             
-            <Link href="/">
+            <TransitionLink href="/">
               <button className="border border-primary text-primary px-8 py-3 font-inter font-medium rounded-lg hover:bg-gray-50 transition-all duration-300 w-full sm:w-auto">
                 Back to Home
               </button>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
       </section>

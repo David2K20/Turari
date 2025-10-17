@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useCart } from '@/contexts/CartContext'
 import { formatPrice } from '@/lib/data'
 import Image from 'next/image'
-import Link from 'next/link'
+import TransitionLink from '@/components/TransitionLink'
 import { useRouter } from 'next/navigation'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
@@ -239,6 +239,7 @@ const CheckoutPage = () => {
                             src={item.image}
                             alt={item.name}
                             fill
+                            sizes="64px"
                             className="object-cover"
                           />
                         </div>
@@ -298,14 +299,14 @@ const CheckoutPage = () => {
                     )}
                   </button>
 
-                  <Link href="/cart">
+                  <TransitionLink href="/cart">
                     <button
                       type="button"
                       className="w-full border border-primary text-primary py-3 rounded-lg font-inter font-medium hover:bg-gray-50 transition-all duration-300"
                     >
                       Back to Cart
                     </button>
-                  </Link>
+                  </TransitionLink>
                 </div>
               </div>
             </div>

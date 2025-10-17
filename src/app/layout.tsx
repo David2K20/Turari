@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import '@/styles/globals.css'
 import { CartProvider } from '@/contexts/CartContext'
+import PageLoader from '@/components/PageLoader'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,6 +66,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className={`${inter.className} antialiased`}>
         <CartProvider>
+          <PageLoader />
           <div className="min-h-screen bg-background">
             {children}
           </div>

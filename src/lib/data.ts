@@ -214,6 +214,193 @@ export const featuredProducts: Product[] = [
     size: '50ml',
     inStock: true,
     featured: false
+  },
+  {
+    id: '13',
+    name: 'Sapphire Serenade',
+    description: 'Elegant blend of iris and violet with powdery musks, creating an air of refined mystery.',
+    price: 142000,
+    image: '/images/perfume_15.webp',
+    images: ['/images/perfume_15.webp'],
+    category: 'Floral',
+    scent_notes: {
+      top: ['Bergamot', 'Aldehydes'],
+      middle: ['Iris', 'Violet', 'Ylang-Ylang'],
+      base: ['Powdery Musk', 'Sandalwood', 'Amber']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '14',
+    name: 'Desert Mirage',
+    description: 'Exotic spices and warm sand notes transport you to golden dunes under starlit skies.',
+    price: 115000,
+    image: '/images/perfume_16.webp',
+    images: ['/images/perfume_16.webp'],
+    category: 'Oriental',
+    scent_notes: {
+      top: ['Cardamom', 'Star Anise', 'Ginger'],
+      middle: ['Papyrus', 'Frankincense', 'Myrrh'],
+      base: ['Amber', 'Cedarwood', 'Leather']
+    },
+    size: '30ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '15',
+    name: 'Jade Whisper',
+    description: 'Crisp green notes with fresh cucumber and bamboo, evoking tranquil Asian gardens.',
+    price: 82000,
+    image: '/images/perfume_17.webp',
+    images: ['/images/perfume_17.webp'],
+    category: 'Fresh',
+    scent_notes: {
+      top: ['Cucumber', 'Green Tea', 'Mint'],
+      middle: ['Bamboo', 'Water Lotus', 'White Tea'],
+      base: ['White Musk', 'Vetiver', 'Blonde Woods']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '16',
+    name: 'Burgundy Eclipse',
+    description: 'Rich red fruits and dark berries wrapped in sensual musk, perfect for evening allure.',
+    price: 128000,
+    image: '/images/perfume_18.webp',
+    images: ['/images/perfume_18.webp'],
+    category: 'Fruity',
+    scent_notes: {
+      top: ['Blackcurrant', 'Raspberry', 'Cherry'],
+      middle: ['Plum', 'Black Rose', 'Praline'],
+      base: ['Velvet Musk', 'Patchouli', 'Vanilla']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '17',
+    name: 'Silver Cascade',
+    description: 'Cool and refreshing like a mountain stream, with crisp aldehydes and aquatic florals.',
+    price: 89000,
+    image: '/images/perfume_19.webp',
+    images: ['/images/perfume_19.webp'],
+    category: 'Aquatic',
+    scent_notes: {
+      top: ['Aldehydes', 'Water Notes', 'Mint'],
+      middle: ['Water Lily', 'Peony', 'Marine Accord'],
+      base: ['Ambergris', 'White Musk', 'Driftwood']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '18',
+    name: 'Mahogany Embrace',
+    description: 'Deep, rich woods with smoky leather and tobacco, exuding masculine confidence.',
+    price: 155000,
+    image: '/images/perfume_20.webp',
+    images: ['/images/perfume_20.webp'],
+    category: 'Woody',
+    scent_notes: {
+      top: ['Black Pepper', 'Elemi', 'Pink Pepper'],
+      middle: ['Tobacco Leaf', 'Leather', 'Guaiac Wood'],
+      base: ['Mahogany', 'Vetiver', 'Tonka Bean']
+    },
+    size: '30ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '19',
+    name: 'Lunar Blossom',
+    description: 'Ethereal night flowers with shimmering aldehydes, capturing moonlit gardens.',
+    price: 118000,
+    image: '/images/perfume_21.webp',
+    images: ['/images/perfume_21.webp'],
+    category: 'Floral',
+    scent_notes: {
+      top: ['Aldehydes', 'White Pepper', 'Neroli'],
+      middle: ['Night Blooming Cereus', 'Moonflower', 'Jasmine'],
+      base: ['White Amber', 'Cashmere Musk', 'Sandalwood']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '20',
+    name: 'Amber Velvet',
+    description: 'Warm, enveloping amber with creamy vanilla and benzoin, like liquid gold on skin.',
+    price: 138000,
+    image: '/images/perfume_22.webp',
+    images: ['/images/perfume_22.webp'],
+    category: 'Oriental',
+    scent_notes: {
+      top: ['Orange Blossom', 'Clary Sage'],
+      middle: ['Amber', 'Honey', 'Heliotrope'],
+      base: ['Vanilla', 'Benzoin', 'Labdanum']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '21',
+    name: 'Coastal Breeze',
+    description: 'Fresh maritime notes with salty air and sun-warmed driftwood, capturing seaside escapes.',
+    price: 92000,
+    image: '/images/perfume_23.webp',
+    images: ['/images/perfume_23.webp'],
+    category: 'Aquatic',
+    scent_notes: {
+      top: ['Sea Salt', 'Lemon', 'Grapefruit'],
+      middle: ['Seaweed', 'Rosemary', 'Sage'],
+      base: ['Driftwood', 'Cedar', 'White Musk']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '22',
+    name: 'Citron Soleil',
+    description: 'Bright citrus explosion with sparkling champagne notes, radiating joy and energy.',
+    price: 76000,
+    image: '/images/perfume_3.jpg',
+    images: ['/images/perfume_3.jpg'],
+    category: 'Citrus',
+    scent_notes: {
+      top: ['Lemon', 'Mandarin', 'Grapefruit'],
+      middle: ['Champagne', 'Neroli', 'Petitgrain'],
+      base: ['Light Musk', 'White Amber', 'Blonde Woods']
+    },
+    size: '30ml',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: '23',
+    name: 'Twilight Rose',
+    description: 'Classic rose with modern twists of pink pepper and raspberry, timeless yet contemporary.',
+    price: 112000,
+    image: '/images/perfume_6.jpg',
+    images: ['/images/perfume_6.jpg'],
+    category: 'Floral',
+    scent_notes: {
+      top: ['Pink Pepper', 'Raspberry', 'Bergamot'],
+      middle: ['Bulgarian Rose', 'Turkish Rose', 'Geranium'],
+      base: ['Patchouli', 'White Musk', 'Cashmeran']
+    },
+    size: '50ml',
+    inStock: true,
+    featured: false
   }
 ]
 

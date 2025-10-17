@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import TransitionLink from './TransitionLink'
 import { featuredProducts, formatPrice } from '@/lib/data'
 import { Product } from '@/types'
 import { useCart } from '@/contexts/CartContext'
@@ -29,6 +29,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           src={product.image}
           alt={product.name}
           fill
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           className={`object-cover transition-all duration-300 ${
             imageLoading ? 'opacity-0' : 'opacity-100'
           }`}
@@ -124,11 +125,11 @@ const FeaturedProducts = () => {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <Link href="/shop">
+          <TransitionLink href="/shop">
             <button className="btn-secondary">
               Shop Now
             </button>
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </section>

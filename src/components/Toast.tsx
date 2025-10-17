@@ -51,6 +51,7 @@ const Toast = ({ message, productImage, productName, onClose, duration = 3000 }:
                 src={productImage}
                 alt={productName || 'Product'}
                 fill
+                sizes="48px"
                 className="object-cover"
               />
             </div>

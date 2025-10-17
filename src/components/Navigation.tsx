@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import TransitionLink from './TransitionLink'
 import { useCart } from '@/contexts/CartContext'
 
 const Navigation = () => {
@@ -45,22 +45,22 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
-          <Link href="/" className="group">
+          <TransitionLink href="/" className="group">
             <h1 className="heading-luxury text-2xl font-bold tracking-tight transition-all duration-300 hover:text-gray-600">
               Turari
             </h1>
-          </Link>
+          </TransitionLink>
 
           {/* Navigation Links - Hidden on mobile, shown on md+ */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <TransitionLink
                 key={item.name}
                 href={item.href}
                 className="font-inter text-sm font-medium text-primary hover:text-gray-600 transition-colors duration-300"
               >
                 {item.name}
-              </Link>
+              </TransitionLink>
             ))}
             <button
               onClick={scrollToFooter}
@@ -72,7 +72,7 @@ const Navigation = () => {
 
           {/* Cart Icon */}
           <div className="flex items-center">
-            <Link href="/cart">
+            <TransitionLink href="/cart">
               <button className="relative p-2 text-primary hover:text-gray-600 transition-colors duration-300">
                 <svg
                   className="w-5 h-5"
@@ -95,7 +95,7 @@ const Navigation = () => {
                   </span>
                 )}
               </button>
-            </Link>
+            </TransitionLink>
 
             {/* Mobile Menu Button - Only shown on mobile */}
             <button 
@@ -145,14 +145,14 @@ const Navigation = () => {
           <div className="mt-4 pb-4 border-t border-gray-100 pt-4">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <Link
+                <TransitionLink
                   key={item.name}
                   href={item.href}
                   onClick={closeMobileMenu}
                   className="font-inter text-sm font-medium text-primary hover:text-gray-600 transition-colors duration-300 py-2"
                 >
                   {item.name}
-                </Link>
+                </TransitionLink>
               ))}
               <button
                 onClick={scrollToFooter}
