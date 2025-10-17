@@ -384,23 +384,6 @@ export const featuredProducts: Product[] = [
     size: '30ml',
     inStock: true,
     featured: false
-  },
-  {
-    id: '23',
-    name: 'Twilight Rose',
-    description: 'Classic rose with modern twists of pink pepper and raspberry, timeless yet contemporary.',
-    price: 112000,
-    image: '/images/perfume_6.jpg',
-    images: ['/images/perfume_6.jpg'],
-    category: 'Floral',
-    scent_notes: {
-      top: ['Pink Pepper', 'Raspberry', 'Bergamot'],
-      middle: ['Bulgarian Rose', 'Turkish Rose', 'Geranium'],
-      base: ['Patchouli', 'White Musk', 'Cashmeran']
-    },
-    size: '50ml',
-    inStock: true,
-    featured: false
   }
 ]
 
