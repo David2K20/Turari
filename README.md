@@ -2,6 +2,22 @@
 
 A modern e-commerce platform for luxury perfumes built with Next.js 15, React 19, and TypeScript.
 
+## Screenshots
+
+### Hero Section
+![Hero Section](public/screenshots/hero_section.PNG)
+
+### Shop Page
+![Shop Page](public/screenshots/shop_page.PNG)
+
+### Shopping Cart
+![Cart with Items](public/screenshots/item_cart.png)
+![Empty Cart](public/screenshots/empy_cart.png)
+![Add to Cart Toast](public/screenshots/toast_cart.png)
+
+### Checkout
+![Stripe Payment](public/screenshots/stripe_payment.png)
+
 ## Features
 
 - 🛍️ Curated perfume catalog
