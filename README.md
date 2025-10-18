@@ -1,6 +1,6 @@
 # Turari
 
-A modern e-commerce platform for luxury perfumes built with Next.js 15, React 19, and TypeScript.
+A modern e-commerce platform for luxury perfumes built with Next.js, React, and TypeScript.
 
 ## Features
 
