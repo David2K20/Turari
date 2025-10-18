@@ -11,12 +11,16 @@ A modern e-commerce platform for luxury perfumes built with Next.js, React, and 
 ![Shop Page](public/screenshots/shop_page.PNG)
 
 ### Shopping Cart
-<img src="public/screenshots/item_cart.png" height="400" />
-<img src="public/screenshots/empy_cart.png" height="400" />
-<img src="public/screenshots/toast_cart.png" height="400" />
+<p>
+  <img src="public/screenshots/item_cart.png" height="400" />
+  <img src="public/screenshots/empy_cart.png" height="400" />
+</p>
 
-### Checkout
-<img src="public/screenshots/stripe_payment.png" height="400" />
+### Checkout & Notifications
+<p>
+  <img src="public/screenshots/toast_cart.png" height="400" />
+  <img src="public/screenshots/stripe_payment.png" height="400" />
+</p>
 
 ## Features
 
