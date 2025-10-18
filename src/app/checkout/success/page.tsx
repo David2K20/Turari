@@ -1,10 +1,26 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useCart } from '@/contexts/CartContext'
 import TransitionLink from '@/components/TransitionLink'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 const CheckoutSuccessPage = () => {
+  const searchParams = useSearchParams()
+  const { clearCart } = useCart()
+  const paymentIntentId = searchParams.get('payment_intent')
+  const hasCleared = useRef(false)
+
+  // Clear cart on success (only once)
+  useEffect(() => {
+    if (paymentIntentId && !hasCleared.current) {
+      clearCart()
+      hasCleared.current = true
+      console.log('✅ Cart cleared after successful payment')
+    }
+  }, [paymentIntentId, clearCart])
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

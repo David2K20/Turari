@@ -1,7 +1,6 @@
 import Navigation from '@/components/Navigation'
 import HeroSection from '@/components/HeroSection'
 import FeaturedProducts from '@/components/FeaturedProducts'
-import FragranceCollections from '@/components/FragranceCollections'
 import FAQSection from '@/components/SubscriptionBanner'
 import Footer from '@/components/Footer'
 
