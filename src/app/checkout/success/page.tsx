@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useCart } from '@/contexts/CartContext'
 import TransitionLink from '@/components/TransitionLink'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
-const CheckoutSuccessPage = () => {
+function SuccessContent() {
   const searchParams = useSearchParams()
   const { clearCart } = useCart()
   const paymentIntentId = searchParams.get('payment_intent')
@@ -21,6 +21,7 @@ const CheckoutSuccessPage = () => {
       console.log('✅ Cart cleared after successful payment')
     }
   }, [paymentIntentId, clearCart])
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -111,6 +112,25 @@ const CheckoutSuccessPage = () => {
 
       <Footer />
     </div>
+  )
+}
+
+const CheckoutSuccessPage = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+            <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <p className="font-inter text-secondary">Loading...</p>
+        </div>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   )
 }
 

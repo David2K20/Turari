@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Environment variables needed (set in Netlify UI):
+# STRIPE_SECRET_KEY
+# NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+# STRIPE_WEBHOOK_SECRET
+# BREVO_API_KEY
+# SENDER_EMAIL
+# SENDER_NAME
+# NEXT_PUBLIC_APP_URL

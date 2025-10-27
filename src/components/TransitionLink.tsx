@@ -33,7 +33,7 @@ export default function TransitionLink({
 
     // For internal navigation, show loader first
     const currentPath = window.location.pathname
-    const targetPath = typeof href === 'string' ? href : href.toString()
+    const targetPath = href
     
     // Only show loader if navigating to a different page
     if (currentPath !== targetPath) {
